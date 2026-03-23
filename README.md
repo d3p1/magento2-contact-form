@@ -2,6 +2,10 @@
 
 # [MAGENTO 2 - CONTACT FORM]
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![code consistency: php_code_sniffer](https://img.shields.io/badge/code_consistency-php_code_sniffer-blue.svg)](https://github.com/PHPCSStandards/PHP_CodeSniffer)
+[![code consistency: php_cs_fixer](https://img.shields.io/badge/code_consistency-php_cs_fixer-purple.svg)](http://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
+
 </div>
 
 ## Introduction
