@@ -6,7 +6,7 @@
  */
 -->
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget id="bina_contact_form" class="Bina\ContactForm\Block\Widget\Form">
+    <widget id="d3p1_contact_form" class="D3p1\ContactForm\Block\Widget\Form">
         <label translate="true">Contact Form</label>
         <description translate="true"><![CDATA[Add a contact form to your site]]></description>
     </widget>

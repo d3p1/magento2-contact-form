@@ -3,7 +3,7 @@
  * @description Contact form widget block
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
-namespace Bina\ContactForm\Block\Widget;
+namespace D3p1\ContactForm\Block\Widget;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Widget\Block\BlockInterface;
@@ -13,7 +13,7 @@ class Form extends Template implements BlockInterface
     /**
      * @var string
      */
-    protected $_template = 'Bina_ContactForm::widget/form.phtml';
+    protected $_template = 'D3p1_ContactForm::widget/form.phtml';
 
     /**
      * Get contact URL

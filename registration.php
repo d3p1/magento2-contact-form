@@ -5,6 +5,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Bina_ContactForm',
+    'D3p1_ContactForm',
     __DIR__
 );

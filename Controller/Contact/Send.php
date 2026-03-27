@@ -3,7 +3,7 @@
  * @description Contact AJAX action
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
-namespace Bina\ContactForm\Controller\Contact;
+namespace D3p1\ContactForm\Controller\Contact;
 
 use Exception;
 use Magento\Framework\DataObject;
