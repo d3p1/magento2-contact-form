@@ -1,11 +1,7 @@
 <?php
 /**
- *
  * @description Contact form widget block
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 namespace Bina\ContactForm\Block\Widget;
 
@@ -15,18 +11,14 @@ use Magento\Widget\Block\BlockInterface;
 class Form extends Template implements BlockInterface
 {
     /**
-     *
      * @var string
-     *
      */
     protected $_template = 'Bina_ContactForm::widget/form.phtml';
 
     /**
-     *
      * Get contact URL
      *
      * @return string
-     *
      */
     public function getContactUrl()
     {
@@ -34,13 +26,10 @@ class Form extends Template implements BlockInterface
     }
 
     /**
-     *
      * Get form additional info block
      *
      * @return Template|null
-     *
-     * @note Allow configured an optional block to add additional information to this form
-     *
+     * @note   Allow configured an optional block to add additional information to this form
      */
     public function getFormAdditionalInfoBlock()
     {
@@ -48,15 +37,12 @@ class Form extends Template implements BlockInterface
     }
 
     /**
-     *
      * Set form additional info block
      *
-     * @param Template $block
-     *
+     * @param  Template $block
      * @return $this
-     *
-     * @note Allow configured an optional block to add additional information to this form
-     *
+     * @note   Allow configured an optional block to add
+     *         additional information to this form
      */
     public function setFormAdditionalInfoBlock(Template $block)
     {
@@ -64,35 +50,18 @@ class Form extends Template implements BlockInterface
     }
 
     /**
-     *
      * Get form additional information HTML
      *
      * @return string
-     *
-     * @note Allow configured an optional block to add additional information to this form
-     *
+     * @note   Allow configured an optional block to add
+     *         additional information to this form
      */
     public function getFormAdditionalInfoHtml()
     {
-        /**
-         *
-         * @note Check block
-         *
-         */
         if (!is_null($block = $this->getFormAdditionalInfoBlock())) {
-            /**
-             *
-             * @note Return block HTML
-             *
-             */
             return $block->toHtml();
         }
 
-        /**
-         *
-         * @note Return additional HTML
-         *
-         */
         return $this->getChildHtml('form_additional_info');
     }
 }

@@ -1,156 +1,52 @@
 <?php
 /**
- *
  * @description Contact form widget template
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 ?>
 
 <?php
 /**
- *
  * @var \Bina\ContactForm\Block\Widget\Form $block
- *
  */
 ?>
 
-<?php
-/**
- *
- * @note Init widget container
- *
- */
-?>
 <div class="contact-form-widget-container">
-    <?php
-    /**
-     *
-     * @note Init contact form
-     *
-     */
-    ?>
     <form class="form contact" action="#" id="contact-form" method="post">
-        <?php
-        /**
-         *
-         * @note Add fieldset
-         *
-         */
-        ?>
         <fieldset class="fieldset">
-            <?php
-            /**
-             *
-             * @note Add legend
-             *
-             */
-            ?>
             <legend class="legend title">
                 <span><?= $block->escapeHtml(__('Contact')) ?></span>
             </legend>
 
-            <?php
-            /**
-             *
-             * @note Fields container
-             *
-             */
-            ?>
             <div class="fields content">
-                <?php
-                /**
-                 *
-                 * @note Add name field
-                 *
-                 */
-                ?>
                 <div class="input-field">
                     <input type="text" name="name" id="name" class="input-text" title="<?= $block->escapeHtmlAttr(__('Name')) ?>"/>
                     <label for="name"><?= $block->escapeHtml(__('Name')) ?></label>
                 </div>
 
-                <?php
-                /**
-                 *
-                 * @note Add email field
-                 *
-                 */
-                ?>
                 <div class="input-field">
                     <input type="email" name="email" id="email" class="input-text" title="<?= $block->escapeHtmlAttr(__('Email')) ?>"/>
                     <label for="email"><?= $block->escapeHtml(__('Email')) ?></label>
                 </div>
 
-                <?php
-                /**
-                 *
-                 * @note Add phone number field
-                 *
-                 */
-                ?>
                 <div class="input-field">
                     <input type="text" name="telephone" id="telephone" class="input-text" title="<?= $block->escapeHtmlAttr(__('Phone number')) ?>"/>
                     <label for="telephone"><?= $block->escapeHtml(__('Phone number')) ?></label>
                 </div>
 
-                <?php
-                /**
-                 *
-                 * @note Add comment field
-                 *
-                 */
-                ?>
                 <div class="input-field">
                     <textarea name="comment" id="comment" class="textarea" title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>"></textarea>
                     <label for="comment"><?= $block->escapeHtml(__('What’s on your mind?')) ?></label>
                 </div>
 
-                <?php
-                /**
-                 *
-                 * @see Add AJAX flag
-                 *
-                 */
-                ?>
                 <input type="hidden" name="isAjax" id="isAjax" value="1"/>
             </div>
         </fieldset>
 
-        <?php
-        /**
-         *
-         * @note The widget allows configured an optional block to add additional information to this form
-         *
-         */
-        ?>
         <?= $block->getFormAdditionalInfoHtml() ?>
 
-        <?php
-        /**
-         *
-         * @note Add action toolbar
-         *
-         */
-        ?>
         <div class="actions-toolbar">
-            <?php
-            /**
-             *
-             * @note Add primary button
-             *
-             */
-            ?>
             <div class="primary">
-                <?php
-                /**
-                 *
-                 * @note Add submit button
-                 *
-                 */
-                ?>
                 <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
                     <span class="text"><?= $block->escapeHtml(__('Submit')) ?></span>
                 </button>
@@ -159,41 +55,13 @@
     </form>
 </div>
 
-<?php
-/**
- *
- * @note Contact AJAX action
- *
- */
-?>
 <script>
 // <![CDATA[
 require(['jquery', 'Magento_Ui/js/modal/alert'], function($, alert) {
     $(document).ready(function() {
-        <?php
-        /**
-         *
-         * @note Get contact form
-         *
-         */
-        ?>
         var form = $('#contact-form');
 
-        <?php
-        /**
-         *
-         * @note Contact AJAX action on form submit event
-         *
-         */
-        ?>
         form.submit(function(event) {
-            <?php
-            /**
-             *
-             * @note Validate form
-             *
-             */
-            ?>
             if ($(this).valid()) {
                 event.preventDefault();
                 var data = $(this).serialize();

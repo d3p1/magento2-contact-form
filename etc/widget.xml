@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- *
  * @description Widget configuration
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 -->
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <!--
-    /**
-     *
-     * @note Contact form widget
-     *
-     */
-    -->
     <widget id="bina_contact_form" class="Bina\ContactForm\Block\Widget\Form">
         <label translate="true">Contact Form</label>
         <description translate="true"><![CDATA[Add a contact form to your site]]></description>

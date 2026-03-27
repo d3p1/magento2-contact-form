@@ -1,11 +1,7 @@
 <?php
 /**
- *
  * @description Contact AJAX action
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 namespace Bina\ContactForm\Controller\Contact;
 
@@ -22,90 +18,50 @@ use Magento\Contact\Model\MailInterface;
 class Send extends Action
 {
     /**
-     *
      * @var JsonFactory
-     *
      */
     protected $_resultJsonFactory;
 
     /**
-     *
      * @var MailInterface
-     *
      */
     protected $_mail;
 
     /**
-     *
      * Constructor
      *
      * @param JsonFactory   $resultJsonFactory
      * @param MailInterface $mail
      * @param Context       $context
-     *
      */
     public function __construct(
         JsonFactory   $resultJsonFactory,
         MailInterface $mail,
         Context       $context
     ) {
-        /**
-         *
-         * @note Init result JSON factory
-         *
-         */
         $this->_resultJsonFactory = $resultJsonFactory;
-
-        /**
-         *
-         * @note Init mail model
-         *
-         */
-        $this->_mail = $mail;
-
-        /**
-         *
-         * @note Call parent constructor
-         *
-         */
+        $this->_mail              = $mail;
         parent::__construct($context);
     }
 
     /**
-     *
      * Execute
      *
      * @return Json
-     *
      */
     public function execute()
     {
         /** @var Http $request */
         $request = $this->getRequest();
 
-        /**
-         *
-         * @note Validate if it is an AJAX request
-         *
-         */
         if (!$request->isAjax()) {
             return null;
         }
 
-        /**
-         *
-         * @note Init AJAX data
-         *
-         */
         /** @var array $data */
         $data            = array();
         $data['message'] = '';
 
-        /**
-         *
-         * @note Send email
-         *
-         */
         try {
             $this->_sendEmail($this->_validatedContactParams());
             $data['message'] = __('Thank you very much for your contact! You will get a response as soon as possible.');
@@ -117,22 +73,15 @@ class Send extends Action
             $data['message'] = __('An unexpected error has occurred. Please, try again in a few minutes.');
         }
 
-        /**
-         *
-         * @note Send AJAX Response
-         *
-         */
         return $this->_resultJsonFactory->create()->setData($data);
     }
 
     /**
-     *
      * Send contact email
      *
      * @param array $post
      *
      * @return void
-     *
      */
     private function _sendEmail($post)
     {
@@ -140,51 +89,28 @@ class Send extends Action
     }
 
     /**
-     *
      * Validate contact form params
      *
      * @return array
-     *
      * @throws Exception
-     *
      */
     private function _validatedContactParams()
     {
         /** @var Http $request */
         $request = $this->getRequest();
 
-        /**
-         *
-         * @note Validate name
-         *
-         */
         if (trim($request->getParam('name')) === '') {
             throw new LocalizedException(__('Name is missing.'));
         }
 
-        /**
-         *
-         * @note Validate comment
-         *
-         */
         if (trim($request->getParam('comment')) === '') {
             throw new LocalizedException(__('Comment is missing.'));
         }
 
-        /**
-         *
-         * @note Validate email
-         *
-         */
         if (false === \strpos($request->getParam('email'), '@')) {
             throw new LocalizedException(__('Invalid email address.'));
         }
 
-        /**
-         *
-         * @note Return params
-         *
-         */
         return $request->getParams();
     }
 }
