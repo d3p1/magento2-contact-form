@@ -29,7 +29,8 @@ class Form extends Template implements BlockInterface
      * Get form additional info block
      *
      * @return Template|null
-     * @note   Allow configured an optional block to add additional information to this form
+     * @note   Allow configured an optional block to add
+     *         additional information to this form
      */
     public function getFormAdditionalInfoBlock()
     {
