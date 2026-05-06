@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/d3p1/magento2-contact-form/compare/v1.0.2...v1.0.3) (2026-05-06)
+
+
+### Bug Fixes
+
+* improve code style [[#1](https://github.com/d3p1/magento2-contact-form/issues/1)] ([1687eb1](https://github.com/d3p1/magento2-contact-form/commit/1687eb1f81df4dae093c2a451b36382c5c59a1e0))
+
 ## [1.0.2](https://github.com/d3p1/magento2-contact-form/compare/v1.0.1...v1.0.2) (2026-05-06)
 
 
